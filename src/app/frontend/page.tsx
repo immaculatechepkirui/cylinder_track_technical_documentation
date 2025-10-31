@@ -3,54 +3,6 @@ import NavBar from "../shared-components/NavBar";
 import React from "react";
 import Footer from "../shared-components/footer";
 
-const leftSteps = [
-  {
-    number: "01",
-    title: "Prepared our Project Locally",
-    desc: "Verified package.json contains build and start scripts for the frontend (CRA/Vite/Next).",
-    color: "bg-[#5B80AC]",
-  },
-  {
-    number: "02",
-    title: "Connected Repository to Hosting",
-    desc: "Connect your repo to Firebase Hosting or Netlify for quick deployment.",
-    color: "bg-[#36496E]",
-  },
-  {
-    number: "03",
-    title: "Configure Build Settings",
-    desc: "Set the Build Command (npm run build) and Output Directory (build or .next) and ensure Node version compatibility.",
-    color: "bg-[#5B80AC]",
-  },
-  {
-    number: "04",
-    title: "Added Environment Variables",
-    desc: "Add required variables (FIREBASE_API_KEY, PROJECT_ID) in hosting settings to enable realtime connections.",
-    color: "bg-[#36496E]",
-  },
-  {
-    number: "05",
-    title: "Deployed Application",
-    desc: "Deploy automatically on push or via CLI: firebase deploy --only hosting",
-    color: "bg-[#5B80AC]",
-  },
-];
-
-const rightSteps = [
-  {
-    number: "06",
-    title: "Monitor Build Logs",
-    desc: "Watch hosting dashboard for build errors and runtime issues.",
-    color: "bg-[#5B80AC]",
-  },
-  {
-    number: "07",
-    title: "Final Testing and Validation",
-    desc: "Visit the live URL, verify map updates, and simulate orders to validate end-to-end flow.",
-    color: "bg-[#36496E]",
-  },
-];
-
 export default function Frontend() {
   return (
     <div className="min-h-screen bg-[#D3D7DF] pt-32">

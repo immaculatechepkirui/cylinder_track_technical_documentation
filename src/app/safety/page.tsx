@@ -3,35 +3,18 @@ import Image from "next/image";
 import DocsNavBar from "../shared-components/NavBar";
 import React from "react";
 import Footer from "../shared-components/footer";
-import clsx from "clsx";
 import { useState } from "react";
 
 import {
-  FaStore,
-  FaFileAlt,
-  FaDollarSign,
   FaCogs,
-  FaBullhorn,
-  FaRocket,
   FaDatabase,
   FaProjectDiagram,
   FaCloudDownloadAlt,
   FaCheckCircle,
   FaRegFilePdf,
-  FaPython,
   FaChartLine,
-  FaRobot,
   FaCode,
 } from "react-icons/fa";
-import {
-  SiPandas,
-  SiNumpy,
-  SiLangchain,
-  SiGooglecloud,
-  SiPostgresql,
-  SiScikitlearn,
-  SiSqlalchemy,
-} from "react-icons/si";
 
 
 const pipelineSteps = [
@@ -130,98 +113,9 @@ const pipelineSteps = [
   },
 ];
 
-const steping = [
-  {
-    icon: <FaStore size={28} className="text-white" />,
-    title: "MVP Planning",
-    subtitle: "STEP 1",
-    description:
-      "Define minimal customer flows: order form, confirmation, status updates, and driver simulation.",
-  },
-  {
-    icon: <FaFileAlt size={28} className="text-white" />,
-    title: "Rapid Frontend",
-    subtitle: "STEP 2",
-    description:
-      "Build a mobile-first PWA using React or Next.js to capture orders and show live map tracking.",
-  },
-  {
-    icon: <FaDollarSign size={28} className="text-white" />,
-    title: "Realtime Backend",
-    subtitle: "STEP 3",
-    description:
-      "Implement Firestore / Realtime DB to hold orders and driver positions, enabling instantaneous updates.",
-  },
-  {
-    icon: <FaCogs size={28} className="text-white" />,
-    title: "Driver Simulation",
-    subtitle: "STEP 4",
-    description:
-      "Create a script that writes simulated GPS points to Firestore so maps and status changes can be demonstrated.",
-  },
-  {
-    icon: <FaBullhorn size={28} className="text-white" />,
-    title: "Deploy & Demo",
-    subtitle: "STEP 5",
-    description:
-      "Host frontend on Firebase Hosting or Netlify and present the MVP with a demo video showing an end-to-end order and delivery.",
-  },
-  {
-    icon: <FaRocket size={28} className="text-white" />,
-    title: "Iterate",
-    subtitle: "STEP 6",
-    description:
-      "Collect feedback and add features such as notifications, real SMS integration, and improved driver assignment logic.",
-  },
-];
-
-const steps = [
-  {
-    title: "Create Dockerfile (optional for simulator)",
-    code: `FROM node:20-alpine
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci --production
-COPY . .
-CMD ["node", "simulator.js"]`,
-    desc: "Containerize the driver simulator for reliable demo runs.",
-  },
-  {
-    title: "Create .dockerignore",
-    code: `node_modules/
-.env
-dist/
-*.log`,
-    desc: "Exclude unnecessary files to keep images small.",
-  },
-  {
-    title: "Set Environment Variables",
-    code: `env:
- FIREBASE_PROJECT_ID: \${{ secrets.FIREBASE_PROJECT_ID }}
- FIREBASE_API_KEY: \${{ secrets.FIREBASE_API_KEY }}
- SIMULATOR_SPEED: 1`,
-    desc: "Use CI/CD secrets or .env for sensitive keys and config.",
-  },
-  {
-    title: "Build Frontend",
-    code: `# using Vite or CRA
-npm run build`,
-    desc: "Generate optimized static assets for hosting.",
-  },
-  {
-    title: "Run Simulator Locally",
-    code: `node simulator.js --project my-firebase-project`,
-    desc: "Start writing simulated GPS points to Firestore to test map updates.",
-  },
-  {
-    title: "Deploy to Firebase Hosting",
-    code: `firebase deploy --only hosting,functions`,
-    desc: "Host the web app and optional cloud functions for production demos.",
-  },
-];
 
 export default function RoutingCardsPage() {
-  const [openIdx, setOpenIdx] = useState<number | null>(null);
+  const [ ] = useState<number | null>(null);
   return (
     <main className="min-h-screen bg-[#D3D7DF] pt-32">
       <DocsNavBar />
@@ -396,7 +290,7 @@ export default function RoutingCardsPage() {
                     <li className="flex flex-col">
                       <span className="font-medium">Driver Tracking</span>
                       <p className="opacity-80">
-                        Simulated GPS points update driver's location so customers and admins can follow progress on a live map.
+                        Simulated GPS points update driver location so customers and admins can follow progress on a live map.
                       </p>
                       <span className="inline-flex items-center gap-1 bg-[#D3D7DF] text-[#232C3B] px-2 py-1 rounded-full text-xs font-semibold mt-2">
                         Map
